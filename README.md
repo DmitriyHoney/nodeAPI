@@ -12,6 +12,6 @@ ____
 
 ____
 ## Таски
-:white_check_mark: Сделать реализацию на http
-:negative_squared_cross_mark: Перевести текущую реализацию на ws в отдельный каталог WS
-:negative_squared_cross_mark: Отрефакторить
+:white_check_mark: Сделать реализацию на http    
+:negative_squared_cross_mark: Перевести текущую реализацию на ws в отдельный каталог WS    
+:negative_squared_cross_mark: Отрефакторить    
