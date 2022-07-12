@@ -42,6 +42,7 @@ const server = http.createServer((req, res) => {
   const isApiRequest = req.url.includes('/api/');
   if (isApiRequest) {
     const [ tmp, methodKey ] = req.url.split('/').filter((el) => el);
+    tmp;
     const method = apiMethods.get(methodKey);
     if (!method) {
       res.statusCode = 404;
