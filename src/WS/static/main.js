@@ -1,14 +1,14 @@
 'use strict';
 
 const api = {};
-const baseUrl = 'http://localhost:3000';
+// const baseUrl = 'http://localhost:3000';
 const $app = document.getElementById('app');
 
 const socket = new WebSocket('ws://localhost:3000');
 
 const buildApi = () => {
   ['rect', 'move', 'render'].forEach((key) => {
-    api[key] = (...args) => new Promise((resolve, reject) => {
+    api[key] = (...args) => new Promise(() => {
       socket.send(JSON.stringify({ methodKey: key, args }));
     });
   });
@@ -16,7 +16,6 @@ const buildApi = () => {
 
 const show = async (shapeName) => {
   api.render(shapeName);
-
 };
 
 const initFigure = async () => {

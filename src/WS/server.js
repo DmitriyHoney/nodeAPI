@@ -3,7 +3,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { WebSocket, WebSocketServer } = require('ws');
+const { WebSocketServer } = require('ws');
 
 const PORT = 3000;
 const HOSTNAME = 'localhost';
