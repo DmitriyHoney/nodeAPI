@@ -15,8 +15,8 @@ const buildApi = () => {
 };
 
 const show = async (shapeName) => {
-  const figureSvg = await api.render(shapeName);
-  $app.innerHTML = figureSvg[0];
+  api.render(shapeName);
+
 };
 
 const initFigure = async () => {
@@ -28,8 +28,6 @@ const initFigure = async () => {
   }
 };
 
-
-
 socket.onopen = async function(e) {
   console.log('onopen', e);
   await buildApi();
@@ -37,7 +35,10 @@ socket.onopen = async function(e) {
 };
 
 socket.onmessage = function(event) {
-  console.log(`[message] Данные получены с сервера: ${event.data}`);
+  const data = JSON.parse(event.data);
+  if (data.result.indexOf('xml') >= 0) {
+    $app.innerHTML = data.result;
+  }
 };
 
 socket.onclose = function(event) {
